@@ -25,10 +25,14 @@ How to install ViClassifier
   mkdir VOG_hmmfiles
   
   cd VOG_hmmfiles && tar -zxf ../vog.hmm.tar.gz && cd -
+  
 
 2.create and activate the ViClassifier conda env
+
   conda env create -f ViClassifier.yml
+  
   conda activate ViClassifier
+  
 
 3.export PATH="/PATH/TO/ViClassifier:$PATH"    #change /PATH/TO the installation path of ViClassifier
 
