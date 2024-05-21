@@ -37,6 +37,7 @@ How to install ViClassifier
 3.export PATH="/PATH/TO/ViClassifier:$PATH"    #change /PATH/TO the installation path of ViClassifier
 
 Running ViClassifier
+
 Two main programs are implemented in GRAViTy: ViClassifier_family and ViClassifier_subfamily. In summary, ViClassifier_family is used to assign taxonomy to query genomes with taxonomic information at family level, and ViClassifier_subfamily is used to assign taxonomy to query genomes with taxonomic information at subfamily level.
 
 ViClassifier_family
