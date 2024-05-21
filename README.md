@@ -7,6 +7,7 @@ Note that this is an ALPHA version of the program, meaning that this collection 
 
 
 How to install ViClassifier
+
 1.copy to your profile the content of the ViClassifier folder
   git clone https://github.com/AnantharamanLab/ViClassifier.git
   cd ViClassifier/database
