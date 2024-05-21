@@ -9,13 +9,21 @@ Note that this is an ALPHA version of the program, meaning that this collection 
 How to install ViClassifier
 
 1.copy to your profile the content of the ViClassifier folder
+
   git clone https://github.com/AnantharamanLab/ViClassifier.git
+  
   cd ViClassifier/database
+  
   unzip packages_for_pplacer.zip
+  
   unzip VOG_protein_sequences_at_FamilyOrSubfamily_rank.zip
+  
   gzip -d reference_genomes.fasta.gz
+  
   wget https://fileshare.lisc.univie.ac.at/vog/vog216/vog.hmm.tar.gz
+  
   mkdir VOG_hmmfiles
+  
   cd VOG_hmmfiles && tar -zxf ../vog.hmm.tar.gz && cd -
 
 2.create and activate the ViClassifier conda env
