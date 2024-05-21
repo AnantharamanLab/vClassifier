@@ -1,6 +1,0 @@
-Query	Species	Genus	Subfamily	Family	Order	Class	Phylum	Kingdom	Realm
-AJ604531.1	Tequintavirus NBSal003	Tequintavirus	Markadamsvirinae	Demerecviridae	NA	Caudoviricetes	Uroviricota	Heunggongvirae	Duplodnaviria
-AB218927.1	Emesvirus japonicum	Emesvirus	NA	Fiersviridae	Norzivirales	Leviviricetes	Lenarviricota	Orthornavirae	Riboviria
-CP013282.1	Betatectivirus Bam35	Betatectivirus	NA	Tectiviridae	Kalamavirales	Tectiliviricetes	Preplasmiviricota	Bamfordvirae	Varidnaviria
-AY846870.1	Gruunavirus GTE5	Gruunavirus	Emilbogenvirinae	Zierdtviridae	NA	Caudoviricetes	Uroviricota	Heunggongvirae	Duplodnaviria
-AB084151.1	Uassigned	Unassigned	Emmerichvirinae	Straboviridae	NA	Caudoviricetes	Uroviricota	Heunggongvirae	Duplodnaviria
