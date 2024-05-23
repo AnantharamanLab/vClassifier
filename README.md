@@ -9,7 +9,7 @@ Note that this is an ALPHA version of the program, meaning that this collection 
 # How to install ViClassifier
 
 **1. copy to your profile the content of the ViClassifier folder**
-
+```
   git clone https://github.com/AnantharamanLab/ViClassifier.git
   
   cd ViClassifier/database
@@ -25,17 +25,19 @@ Note that this is an ALPHA version of the program, meaning that this collection 
   mkdir VOG_hmmfiles
   
   cd VOG_hmmfiles && tar -zxf ../vog.hmm.tar.gz && cd -
-  
+```  
 
 **2. create and activate the ViClassifier conda env**
-
+```
   conda env create -f ViClassifier.yml
   
   conda activate ViClassifier
-  
+```  
 
-**3. export PATH="/PATH/TO/ViClassifier:$PATH"**    #change /PATH/TO the installation path of ViClassifier
-
+**3. Add a directory to your PATH**    
+```
+export PATH="/PATH/TO/ViClassifier:$PATH"  #change /PATH/TO to the installation path of ViClassifier 
+```
 # Running ViClassifier
 
 Two main programs are implemented in GRAViTy: ViClassifier_family and ViClassifier_subfamily. In summary, ViClassifier_family is used to assign taxonomy to query genomes with taxonomic information at family level, and ViClassifier_subfamily is used to assign taxonomy to query genomes with taxonomic information at subfamily level.
@@ -43,10 +45,9 @@ Two main programs are implemented in GRAViTy: ViClassifier_family and ViClassifi
 ## **ViClassifier_family**
 
 **Usage:**
-
+```
 ViClassifier_family -i "/PATH/TO/query_genomes.fna" -l "/PATH/TO/taxa_of_query_genomes.txt" -p "/PATH/TO/Installation" -t "Number of threads"
-
-
+```
 **Option descriptions:**
 
 -i     Input query genomes in FASTA format.
@@ -70,16 +71,16 @@ Intermediate outputs are mainly organised into three directories.
 - directory **tree_replacement_and_taxon_assignment** contains outputs generated during reference tree replacement and taxon assignment.
 
 **Example:**
-
+```
 ViClassifier_family -i "/PATH/TO/query_genomes.fna" -l "/PATH/TO/query_family" -p "/PATH/TO/ViClassifier" -t 30
-
+```
 
 ## **ViClassifier_subfamily**
 
 **Usage:**
-
+```
 ViClassifier_subfamily -i "/PATH/TO/query_genomes.fna" -l "/PATH/TO/taxa_of_query_genomes.txt" -p "/PATH/TO/Installation" -t "Number of threads"
-
+```
 **Option descriptions:**
 
 -i     Input query genomes in FASTA format.
@@ -104,6 +105,6 @@ Intermediate outputs are mainly organised into three directories.
 
 
 **Example:**
-
+```
 ViClassifier_subfamily -i "/PATH/TO/query_genomes.fna" -l "/PATH/TO/query_subfamily" -p "/PATH/TO/ViClassifier" -t 30
-
+```
