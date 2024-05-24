@@ -26,9 +26,9 @@
 ################################################################################
 Help()
 {
-   echo "ViClassifier v1.0 :: classification of viral genomes based on phylogeny and genome identity"
+   echo "vClassifier v1.0 :: classification of viral genomes based on phylogeny and genome identity"
    echo 
-   echo "Usage: ViClassifier_subfamily [-i|-l|-t|-p|-h]"
+   echo "Usage: vClassifier_subfamily [-i|-l|-t|-p|-h]"
    echo "options:"
    echo "-i     Input query genomes."
    echo "-l     Input taxon list of query genomes."
