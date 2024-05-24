@@ -1,4 +1,4 @@
-name: ViClassifier
+name: vClassifier
 channels:
   - bioconda
   - conda-forge
