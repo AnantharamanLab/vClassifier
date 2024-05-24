@@ -1,18 +1,18 @@
-# ViClassifier v1.0
+# vClassifier v1.0
 
 # Introduction
-Leveraging reference trees and nucleotide identity metrics, we developed the ViClassifier toolkit. This tool streamlines and objectifies the taxonomic categorization of prokaryotic viral genomes. Benchmark comparisons revealed that ViClassifier matches or surpasses other available tools regarding precision and classification success rates. Accurate assignments at the subfamily, genus, and species levels will significantly refine taxonomic resolution.
+Leveraging reference trees and nucleotide identity metrics, we developed the vClassifier toolkit. This tool streamlines and objectifies the taxonomic categorization of prokaryotic viral genomes. Benchmark comparisons revealed that vClassifier matches or surpasses other available tools regarding precision and classification success rates. Accurate assignments at the subfamily, genus, and species levels will significantly refine taxonomic resolution.
 
 Note that this is an ALPHA version of the program, meaning that this collection of scripts likely contains a lot of bugs, and it is still under development.
 
 
-# How to install ViClassifier
+# How to install vClassifier
 
-**1. copy to your profile the content of the ViClassifier folder**
+**1. copy to your profile the content of the vClassifier folder**
 ```
-  git clone https://github.com/AnantharamanLab/ViClassifier.git
+  git clone https://github.com/AnantharamanLab/vClassifier.git
   
-  cd ViClassifier/database
+  cd vClassifier/database
   
   unzip packages_for_pplacer.zip
   
@@ -27,26 +27,26 @@ Note that this is an ALPHA version of the program, meaning that this collection 
   cd VOG_hmmfiles && tar -zxf ../vog.hmm.tar.gz && cd -
 ```  
 
-**2. create and activate the ViClassifier conda env**
+**2. create and activate the vClassifier conda env**
 ```
-  conda env create -f ViClassifier.yml
+  conda env create -f vClassifier.yml
   
-  conda activate ViClassifier
+  conda activate vClassifier
 ```  
 
 **3. Add a directory to your PATH**    
 ```
-export PATH="/PATH/TO/ViClassifier:$PATH"  #change /PATH/TO to the installation path of ViClassifier 
+export PATH="/PATH/TO/vClassifier:$PATH"  #change /PATH/TO to the installation path of vClassifier 
 ```
-# Running ViClassifier
+# Running vClassifier
 
-Two main programs are implemented in GRAViTy: ViClassifier_family and ViClassifier_subfamily. In summary, ViClassifier_family is used to assign taxonomy to query genomes with taxonomic information at family level, and ViClassifier_subfamily is used to assign taxonomy to query genomes with taxonomic information at subfamily level.
+Two main programs are implemented in GRAViTy: vClassifier_family and vClassifier_subfamily. In summary, vClassifier_family is used to assign taxonomy to query genomes with taxonomic information at family level, and vClassifier_subfamily is used to assign taxonomy to query genomes with taxonomic information at subfamily level.
 
-## **ViClassifier_family**
+## **vClassifier_family**
 
 **Usage:**
 ```
-ViClassifier_family -i "/PATH/TO/query_genomes.fna" -l "/PATH/TO/taxa_of_query_genomes.txt" -p "/PATH/TO/Installation" -t "Number of threads"
+vClassifier_family -i "/PATH/TO/query_genomes.fna" -l "/PATH/TO/taxa_of_query_genomes.txt" -p "/PATH/TO/Installation" -t "Number of threads"
 ```
 **Option descriptions:**
 
@@ -56,7 +56,7 @@ ViClassifier_family -i "/PATH/TO/query_genomes.fna" -l "/PATH/TO/taxa_of_query_g
 
 -t     Number of threads to use for parallel running.
 
--p     Path of intallation of ViClassifier.
+-p     Path of intallation of vClassifier.
 
 -h     Show help on version and usage.
 
@@ -72,14 +72,14 @@ Intermediate outputs are mainly organised into three directories.
 
 **Example:**
 ```
-ViClassifier_family -i "/PATH/TO/query_genomes.fna" -l "/PATH/TO/query_family" -p "/PATH/TO/ViClassifier" -t 30
+vClassifier_family -i "/PATH/TO/query_genomes.fna" -l "/PATH/TO/query_family" -p "/PATH/TO/vClassifier" -t 30
 ```
 
-## **ViClassifier_subfamily**
+## **vClassifier_subfamily**
 
 **Usage:**
 ```
-ViClassifier_subfamily -i "/PATH/TO/query_genomes.fna" -l "/PATH/TO/taxa_of_query_genomes.txt" -p "/PATH/TO/Installation" -t "Number of threads"
+vClassifier_subfamily -i "/PATH/TO/query_genomes.fna" -l "/PATH/TO/taxa_of_query_genomes.txt" -p "/PATH/TO/Installation" -t "Number of threads"
 ```
 **Option descriptions:**
 
@@ -89,7 +89,7 @@ ViClassifier_subfamily -i "/PATH/TO/query_genomes.fna" -l "/PATH/TO/taxa_of_quer
 
 -t     Number of threads to use for parallel running.
 
--p     Path of intallation of ViClassifier.
+-p     Path of intallation of vClassifier.
 
 -h     Show help on version and usage.
 
@@ -106,5 +106,5 @@ Intermediate outputs are mainly organised into three directories.
 
 **Example:**
 ```
-ViClassifier_subfamily -i "/PATH/TO/query_genomes.fna" -l "/PATH/TO/query_subfamily" -p "/PATH/TO/ViClassifier" -t 30
+vClassifier_subfamily -i "/PATH/TO/query_genomes.fna" -l "/PATH/TO/query_subfamily" -p "/PATH/TO/vClassifier" -t 30
 ```
