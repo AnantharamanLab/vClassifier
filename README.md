@@ -1,9 +1,9 @@
 # vClassifier v1.0
 
 # Introduction
-Leveraging reference trees and nucleotide identity metrics, we developed the vClassifier toolkit. This tool streamlines and objectifies the taxonomic categorization of prokaryotic viral genomes. Benchmark comparisons revealed that vClassifier matches or surpasses other available tools regarding precision and classification success rates. Accurate assignments at the subfamily, genus, and species levels will significantly refine taxonomic resolution.
+Leveraging reference trees and nucleotide identity metrics, we developed the vClassifier toolkit. This tool streamlines and standardizes the taxonomic categorization of prokaryotic viral genomes. Benchmark comparisons revealed that vClassifier matches or surpasses other available tools in terms of precision and classification success rates. Accurate assignments at the subfamily, genus, and species levels will significantly enhance taxonomic resolution.
 
-Note that this is an ALPHA version of the program, meaning that this collection of scripts likely contains a lot of bugs, and it is still under development.
+Please note that this is an ALPHA version of the program, which means this collection of scripts likely contains numerous bugs and is still under development.
 
 
 # How to install vClassifier
@@ -40,7 +40,7 @@ export PATH="/PATH/TO/vClassifier:$PATH"  #change /PATH/TO to the installation p
 ```
 # Running vClassifier
 
-Two main programs are implemented in vClassifier: vClassifier_family and vClassifier_subfamily. In summary, vClassifier_family is used to assign taxonomy to query genomes with taxonomic information at family level, and vClassifier_subfamily is used to assign taxonomy to query genomes with taxonomic information at subfamily level.
+Two main programs are implemented in vClassifier: vClassifier_family and vClassifier_subfamily. In summary, vClassifier_family is used to assign taxonomy to query genomes at the family level, while vClassifier_subfamily is used to assign taxonomy at the subfamily level.
 
 ## **vClassifier_family**
 
@@ -50,25 +50,27 @@ vClassifier_family -i "/PATH/TO/query_genomes.fna" -l "/PATH/TO/taxa_of_query_ge
 ```
 **Option descriptions:**
 
--i     Input query genomes in FASTA format.
+-i     Input nucleotide sequences in FASTA format
 
--l     Input taxon list of query genomes. First column is the list of query ID and second is the taxon list at family level.
+-l     File containing the taxa of input nucleotide sequences. The first column should contain the list of query IDs, and the second column should contain the taxon list at the family level
 
--t     Number of threads to use for parallel running.
+-t     Number of threads to use for parallel running
 
--p     Path of intallation of vClassifier.
+-p     vClassifier intallation path 
 
--h     Show help on version and usage.
+-h     Show help on version and usage
 
 
 **Output descriptions:**
 
-Final output file is the "sequences_with_classification.txt" that is the taxonomic assignment to query genomes.
-Intermediate outputs are mainly organised into three directories.
+- The final output file, **"sequences_with_classification.txt"**, contains the taxonomic assignments for the query genomes. 
 
-- directory **gene_calling** contains files generated during gene prediction.
-- directory **genome_alignment** contains files generated during alignment of single-copy genes of queries with that of references.
-- directory **tree_replacement_and_taxon_assignment** contains outputs generated during reference tree replacement and taxon assignment.
+Intermediate outputs are organized into three main directories:
+
+- The **gene_calling** directory contains files generated during gene prediction.
+- The **genome_alignment** directory contains files produced during the alignment of single-copy genes of queries with those of references.
+- The **tree_replacement_and_taxon_assignment** directory holds outputs generated during reference tree replacement and taxon assignment.
+
 
 **Example:**
 ```
@@ -83,25 +85,26 @@ vClassifier_subfamily -i "/PATH/TO/query_genomes.fna" -l "/PATH/TO/taxa_of_query
 ```
 **Option descriptions:**
 
--i     Input query genomes in FASTA format.
+-i     Input nucleotide sequences in FASTA format
 
--l     Input taxon list of query genomes. First column is the list of query ID and second is the taxon list at subfamily level.
+-l     File containing the taxa of input nucleotide sequences. The first column should contain the list of query IDs, and the second column should contain the taxon list at the family level
 
--t     Number of threads to use for parallel running.
+-t     Number of threads to use for parallel running
 
--p     Path of intallation of vClassifier.
+-p     vClassifier intallation path 
 
--h     Show help on version and usage.
+-h     Show help on version and usage
 
 
 **Output descriptions:**
 
-Final output file is the "sequences_with_classification.txt" that is the taxonomic assignment to query genomes.
-Intermediate outputs are mainly organised into three directories.
+- The final output file, **"sequences_with_classification.txt"**, contains the taxonomic assignments for the query genomes. 
 
-- directory **gene_calling** contains files generated during gene prediction.
-- directory **genome_alignment** contains files generated during alignment of single-copy genes of queries with that of references.
-- directory **tree_replacement_and_taxon_assignment** contains outputs generated during reference tree replacement and taxon assignment.
+Intermediate outputs are organized into three main directories:
+
+- The **gene_calling** directory contains files generated during gene prediction.
+- The **genome_alignment** directory contains files produced during the alignment of single-copy genes of queries with those of references.
+- The **tree_replacement_and_taxon_assignment** directory holds outputs generated during reference tree replacement and taxon assignment.
 
 
 **Example:**
