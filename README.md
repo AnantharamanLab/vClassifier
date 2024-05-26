@@ -40,7 +40,7 @@ export PATH="/PATH/TO/vClassifier:$PATH"  #change /PATH/TO to the installation p
 ```
 # Running vClassifier
 
-Two main programs are implemented in GRAViTy: vClassifier_family and vClassifier_subfamily. In summary, vClassifier_family is used to assign taxonomy to query genomes with taxonomic information at family level, and vClassifier_subfamily is used to assign taxonomy to query genomes with taxonomic information at subfamily level.
+Two main programs are implemented in vClassifier: vClassifier_family and vClassifier_subfamily. In summary, vClassifier_family is used to assign taxonomy to query genomes with taxonomic information at family level, and vClassifier_subfamily is used to assign taxonomy to query genomes with taxonomic information at subfamily level.
 
 ## **vClassifier_family**
 
