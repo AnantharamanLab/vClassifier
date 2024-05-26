@@ -30,10 +30,10 @@ Help()
    echo 
    echo "Usage: vClassifier_subfamily [-i|-l|-t|-p|-h]"
    echo "options:"
-   echo "-i     Input query genomes."
-   echo "-l     Input taxon list of query genomes."
+   echo "-i     Input nucleotide sequences in FASTA format."
+   echo "-l     File containing the taxa of input nucleotide sequences. The first column should contain the list of query IDs, and the second column should contain the taxon list at the family level."
    echo "-t     Number of threads to use for parallel running."
-   echo "-p     Path of intallation."
+   echo "-p     vClassifier intallation path."
    echo "-h     Show help on version and usage."
 }
 
