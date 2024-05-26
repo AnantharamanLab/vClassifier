@@ -50,26 +50,23 @@ vClassifier_family -i "/PATH/TO/query_genomes.fna" -l "/PATH/TO/taxa_of_query_ge
 ```
 **Option descriptions:**
 
--i     Input nucleotide sequences in FASTA format
+**-i**     Input nucleotide sequences in FASTA format
 
--l     File containing the taxa of input nucleotide sequences. The first column should contain the list of query IDs, and the second column should contain the taxon list at the family level
+**-l**     File containing the taxa of input nucleotide sequences. The first column should contain the list of query IDs, and the second column should contain the taxon list at the family level
 
--t     Number of threads to use for parallel running
+**-t**     Number of threads to use for parallel running
 
--p     vClassifier intallation path 
+**-p**     vClassifier intallation path 
 
--h     Show help on version and usage
+**-h**     Show help on version and usage
 
 
 **Output descriptions:**
 
 - The final output file, **"sequences_with_classification.txt"**, contains the taxonomic assignments for the query genomes. 
-
-Intermediate outputs are organized into three main directories:
-
-- The **gene_calling** directory contains files generated during gene prediction.
-- The **genome_alignment** directory contains files produced during the alignment of single-copy genes of queries with those of references.
-- The **tree_replacement_and_taxon_assignment** directory holds outputs generated during reference tree replacement and taxon assignment.
+- The intermediate output directory, **gene_calling**,  contains files generated during gene prediction.
+- The intermediate output directory, **genome_alignment**, contains files produced during the alignment of single-copy genes of queries with those of references.
+- The intermediate output directory, **tree_replacement_and_taxon_assignment**, holds outputs generated during reference tree replacement and taxon assignment.
 
 
 **Example:**
@@ -85,26 +82,23 @@ vClassifier_subfamily -i "/PATH/TO/query_genomes.fna" -l "/PATH/TO/taxa_of_query
 ```
 **Option descriptions:**
 
--i     Input nucleotide sequences in FASTA format
+**-i**     Input nucleotide sequences in FASTA format
 
--l     File containing the taxa of input nucleotide sequences. The first column should contain the list of query IDs, and the second column should contain the taxon list at the family level
+**-l**     File containing the taxa of input nucleotide sequences. The first column should contain the list of query IDs, and the second column should contain the taxon list at the family level
 
--t     Number of threads to use for parallel running
+**-t**     Number of threads to use for parallel running
 
--p     vClassifier intallation path 
+**-p**     vClassifier intallation path 
 
--h     Show help on version and usage
+**-h**     Show help on version and usage
 
 
 **Output descriptions:**
 
 - The final output file, **"sequences_with_classification.txt"**, contains the taxonomic assignments for the query genomes. 
-
-Intermediate outputs are organized into three main directories:
-
-- The **gene_calling** directory contains files generated during gene prediction.
-- The **genome_alignment** directory contains files produced during the alignment of single-copy genes of queries with those of references.
-- The **tree_replacement_and_taxon_assignment** directory holds outputs generated during reference tree replacement and taxon assignment.
+- The intermediate output directory, **gene_calling**,  contains files generated during gene prediction.
+- The intermediate output directory, **genome_alignment**, contains files produced during the alignment of single-copy genes of queries with those of references.
+- The intermediate output directory, **tree_replacement_and_taxon_assignment**, holds outputs generated during reference tree replacement and taxon assignment.
 
 
 **Example:**
