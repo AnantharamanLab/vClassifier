@@ -50,7 +50,7 @@ vClassifier_family -i "/PATH/TO/query_genomes.fna" -l "/PATH/TO/taxa_of_query_ge
 ```
 **Option descriptions:**
 
-**-i**     Input nucleotide sequences in FASTA format
+**-i**       Input nucleotide sequences in FASTA format
 
 **-l**     File containing the taxa of input nucleotide sequences. The first column should contain the list of query IDs, and the second column should contain the taxon list at the family level
 
