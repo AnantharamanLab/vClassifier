@@ -10,42 +10,42 @@ Please note that this is an ALPHA version of the program, which means this colle
 
 **1. copy to your profile the content of the vClassifier folder**
 ```
-  git clone https://github.com/AnantharamanLab/vClassifier.git
+git clone https://github.com/AnantharamanLab/vClassifier.git
   
-  cd vClassifier/database
+cd vClassifier/database
   
-  unzip packages_for_pplacer.zip
+unzip packages_for_pplacer.zip
   
-  unzip VOG_protein_sequences_at_FamilyOrSubfamily_rank.zip
+unzip VOG_protein_sequences_at_FamilyOrSubfamily_rank.zip
   
-  gzip -d reference_genomes.fasta.gz
+gzip -d reference_genomes.fasta.gz
   
-  wget https://fileshare.lisc.univie.ac.at/vog/vog216/vog.hmm.tar.gz
+wget https://fileshare.lisc.univie.ac.at/vog/vog216/vog.hmm.tar.gz
   
-  mkdir VOG_hmmfiles
+mkdir VOG_hmmfiles
   
-  cd VOG_hmmfiles && tar -zxf ../vog.hmm.tar.gz && cd -
+cd VOG_hmmfiles && tar -zxf ../vog.hmm.tar.gz && cd -
 ```  
 
 
 **2. add a directory to your $PATH**    
 ```
-  export PATH="/PATH/TO/vClassifier:$PATH"   #change /PATH/TO to the installation path of vClassifier
+export PATH="/PATH/TO/vClassifier:$PATH"   #change /PATH/TO to the installation path of vClassifier
 ```
 
 Please note that if you want to permanently set $PATH on Linux, add the above command to your ~/.profile or ~/.bashrc file and run:
 ```
-  source ~/.profile 
-  or
-  source ~/.bashrc
+source ~/.profile 
+or
+source ~/.bashrc
 ```
 
 
 **3. create and activate the vClassifier conda env**
 ```
-  conda env create -f /Path/To/vClassifier.yml   #change /PATH/TO to the installation path of vClassifier 
+conda env create -f /Path/To/vClassifier.yml   #change /PATH/TO to the installation path of vClassifier 
   
-  conda activate vClassifier
+conda activate vClassifier
 ```
 
 # Running vClassifier
