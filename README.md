@@ -46,7 +46,7 @@ Two main programs are implemented in vClassifier: vClassifier_family and vClassi
 
 **Usage:**
 ```
-vClassifier_family -i "/PATH/TO/query_genomes.fna" -l "/PATH/TO/taxa_of_query_genomes.txt" -p "/PATH/TO/Installation" -t "Number of threads"
+vClassifier_family -i "/PATH/TO/Input" -l "/PATH/TO/Taxa" -p "/PATH/TO/Installation" -t "Number of threads"
 ```
 **Option descriptions:**
 
@@ -78,7 +78,7 @@ vClassifier_family -i "/PATH/TO/query_genomes.fna" -l "/PATH/TO/query_family" -p
 
 **Usage:**
 ```
-vClassifier_subfamily -i "/PATH/TO/query_genomes.fna" -l "/PATH/TO/taxa_of_query_genomes.txt" -p "/PATH/TO/Installation" -t "Number of threads"
+vClassifier_subfamily -i "/PATH/TO/Input" -l "/PATH/TO/Taxa" -p "/PATH/TO/Installation" -t "Number of threads"
 ```
 **Option descriptions:**
 
