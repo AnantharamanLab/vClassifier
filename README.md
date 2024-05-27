@@ -30,7 +30,7 @@ Please note that this is an ALPHA version of the program, which means this colle
 
 **2. add a directory to your $PATH**    
 ```
-  export PATH="/PATH/TO/vClassifier:$PATH"  #change /PATH/TO to the installation path of vClassifier
+  export PATH="/PATH/TO/vClassifier:$PATH"   #change /PATH/TO to the installation path of vClassifier
 ```
 
 Please note that if you want to permanently set $PATH on Linux, add the above command to your ~/.profile or ~/.bashrc file and run:
@@ -43,7 +43,7 @@ Please note that if you want to permanently set $PATH on Linux, add the above co
 
 **3. create and activate the vClassifier conda env**
 ```
-  conda env create -f /Path/To/vClassifier.yml    #change /PATH/TO to the installation path of vClassifier 
+  conda env create -f /Path/To/vClassifier.yml   #change /PATH/TO to the installation path of vClassifier 
   
   conda activate vClassifier
 ```
