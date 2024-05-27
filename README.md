@@ -34,10 +34,18 @@ Please note that this is an ALPHA version of the program, which means this colle
   conda activate vClassifier
 ```  
 
-**3. Add a directory to your PATH**    
+**3. add a directory to your $PATH**    
 ```
-export PATH="/PATH/TO/vClassifier:$PATH"  #change /PATH/TO to the installation path of vClassifier 
+export PATH="/PATH/TO/vClassifier:$PATH"  #change /PATH/TO to the installation path of vClassifier
 ```
+
+Please note that if you want to permanently set $PATH on Linux, add the above command to your ~/.profile or ~/.bashrc file and run:
+```
+source ~/.profile 
+or
+source ~/.bashrc
+```
+
 # Running vClassifier
 
 Two main programs are implemented in vClassifier: vClassifier_family and vClassifier_subfamily. In summary, vClassifier_family is used to assign taxonomy to query genomes at the family level, while vClassifier_subfamily is used to assign taxonomy at the subfamily level.
