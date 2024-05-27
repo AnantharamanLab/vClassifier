@@ -71,7 +71,7 @@ vClassifier_family -i "/PATH/TO/Input" -l "/PATH/TO/Taxa" -p "/PATH/TO/Installat
 
 **Example:**
 ```
-vClassifier_family -i "/PATH/TO/query_genomes.fna" -l "/PATH/TO/query_family" -p "/PATH/TO/vClassifier" -t 30
+vClassifier_family -i "/PATH/TO/vClassifier/example_data/query_genomes.fna" -l "/PATH/TO/vClassifier/example_data/query_family" -p "/PATH/TO/vClassifier" -t 30
 ```
 
 ## **vClassifier_subfamily**
@@ -103,5 +103,5 @@ vClassifier_subfamily -i "/PATH/TO/Input" -l "/PATH/TO/Taxa" -p "/PATH/TO/Instal
 
 **Example:**
 ```
-vClassifier_subfamily -i "/PATH/TO/query_genomes.fna" -l "/PATH/TO/query_subfamily" -p "/PATH/TO/vClassifier" -t 30
+vClassifier_subfamily -i "/PATH/TO/vClassifier/example_data/query_genomes.fna" -l "/PATH/TO/vClassifier/example_data/query_subfamily" -p "/PATH/TO/vClassifier" -t 30
 ```
