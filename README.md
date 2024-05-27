@@ -27,14 +27,8 @@ Please note that this is an ALPHA version of the program, which means this colle
   cd VOG_hmmfiles && tar -zxf ../vog.hmm.tar.gz && cd -
 ```  
 
-**2. create and activate the vClassifier conda env**
-```
-  conda env create -f vClassifier.yml
-  
-  conda activate vClassifier
-```  
 
-**3. add a directory to your $PATH**    
+**2. add a directory to your $PATH**    
 ```
 export PATH="/PATH/TO/vClassifier:$PATH"  #change /PATH/TO to the installation path of vClassifier
 ```
@@ -44,6 +38,14 @@ Please note that if you want to permanently set $PATH on Linux, add the above co
 source ~/.profile 
 or
 source ~/.bashrc
+```
+
+
+**3. create and activate the vClassifier conda env**
+```
+  conda env create -f vClassifier.yml
+  
+  conda activate vClassifier
 ```
 
 # Running vClassifier
