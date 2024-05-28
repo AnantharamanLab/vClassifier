@@ -100,14 +100,15 @@ cat total_hmm.out.evalue3.cov50.besthit |awk '{print $1"\t"$4"\t"$1}'|sed 's/>//
 cat total_hmm.out.evalue3.cov50.besthit.simple.format.with.genomeID.markers|cut -f2|sort -u|while read line
 do
     grep -w "$line" total_hmm.out.evalue3.cov50.besthit.simple.format.with.genomeID.markers >> "$line".protein
-done # maybe multicopy genes remain
+done
 
+# remove multicopy genes
 for i in VOG*.protein
 do
     perl $scripts/retain_only_one_single_copy_gene.pl $i $i.uniq
     rm $i
     mv $i.uniq $i
-done # remove multicopy genes
+done
 
 for i in VOG*.protein
 do
