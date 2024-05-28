@@ -114,7 +114,7 @@ done
 for i in identification_of_markers_bacterial_and_archaeal_viruses_for_*
 do
     taxa=$(echo $i|sed 's/identification_of_markers_bacterial_and_archaeal_viruses_for_//'|sed 's/\.sh//')
-    echo "bash $i -a $wd/gene_calling/queries.protein.faa -b $wd/gene_calling/queries.raw -c $taxa -d $installer_dir/scripts -e $installer_dir/database/selected_single_copy_VOG_for_each_family -f $wd/total_hmm.out.evalue3.cov50 -g $wd/$query_taxonomy -r $installer_dir/database/VOG_protein_sequences_at_FamilyOrSubfamily_rank -t $threads"
+    echo "bash $i -a $wd/gene_calling/queries.protein.faa -b $wd/gene_calling/queries.raw -c $taxa -d $installer_dir/scripts -e $installer_dir/database/selected_single_copy_VOG_for_each_family -f $wd/total_hmm.out.evalue3.cov50 -g $query_taxonomy -r $installer_dir/database/VOG_protein_sequences_at_FamilyOrSubfamily_rank -t $threads"
 done > scriptset.sh
 
 perl $scripts/multiple_threads.pl scriptset.sh -c $threads
