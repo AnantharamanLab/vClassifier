@@ -1,0 +1,77 @@
+#! /bin/bash
+################################################################################
+################################################################################
+################################################################################
+#                                                                              #
+#  Copyright (C) 2024 Kun Zhou                                                 #
+#  zkccnu@gmail.com                                                            #
+#                                                                              #
+#  This program is free software; you can redistribute it and/or modify        #
+#  it under the terms of the GNU General Public License as published by        #
+#  the Free Software Foundation; either version 2 of the License, or           #
+#  (at your option) any later version.                                         #
+#                                                                              #
+#  This program is distributed in the hope that it will be useful,             #
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of              #
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the               #
+#  GNU General Public License for more details.                                #
+#                                                                              #
+#                                                                              #
+################################################################################
+################################################################################
+################################################################################
+
+################################################################################
+# Help                                                                         #
+################################################################################
+Help()
+{
+   echo "vClassifier v1.0 :: classification of viral genomes based on phylogeny and genome identity"
+   echo 
+   echo "Usage: vClassifier [-i|-l|-t|-p|-m|-h]"
+   echo "options:"
+   echo "-i     Input nucleotide sequences in FASTA format."
+   echo "-l     A file containing family or subfamily information for the input nucleotide sequences. The first column should list the query IDs, and the second column should provide the corresponding family or subfamily taxonomy."
+   echo "-t     Number of threads to use for parallel running."
+   echo "-p     vClassifier intallation path."
+   echo "-m     vClassifier mode. Input 'family' or 'subfamily' only. Mode 'family': inputs are viral genomes that include family information. Mode 'subfamily': inputs are viral genomes that include subfamily information."
+   echo "-h     Show help on version and usage."
+}
+
+################################################################################
+################################################################################
+# Main program                                                                 #
+################################################################################
+################################################################################
+################################################################################
+# Process the input options. Add options as needed.                            #
+################################################################################
+# Get the options
+
+while getopts :hl:t:i:p:m: option
+do
+    case "${option}" in
+        i) query_genome=${OPTARG};;
+        l) query_taxonomy=${OPTARG};;
+        t) threads=${OPTARG};;
+	p) installer_dir=${OPTARG};;
+	m) mode=${OPTARG};;
+	h) Help
+	   exit;;
+	\?) echo "Error: Invalid option."
+	   exit;;
+    esac
+done
+
+################################################################################
+#Invoke a separate shell file for the classification of viral families         #
+#or subfamilies                                                                #
+################################################################################
+
+if [ $mode = "family" ];then
+bash $installer_dir/scripts/vClassifier_family.sh -i $query_genome -l $query_taxonomy -p $installer_dir -t $threads
+fi
+
+if [ $mode = "subfamily" ];then
+bash $installer_dir/scripts/vClassifier_subfamily.sh -i $query_genome -l $query_taxonomy -p $installer_dir -t $threads
+fi

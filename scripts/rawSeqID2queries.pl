@@ -21,6 +21,8 @@ close IN1;
 open IN2,"$file2";
 while(<IN2>){
 	my @col=split;
-	print "$read{$col[0]}\t$_";
+	if($read{$col[0]}){
+		print "$read{$col[0]}\t$_";
 	}
-
+}
+close IN2;

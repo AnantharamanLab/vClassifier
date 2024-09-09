@@ -9,7 +9,7 @@ open OUT1,">$out.raw"||die "Error in open $out\n";
 open OUT2,">$out.num"|| die;
 open FQ,$fq||die "Error in reading $fq\n";
 my $seq="";
-my $id;
+my $id="";
 my $num=1;
 chomp($id);
 while (<FQ>) {

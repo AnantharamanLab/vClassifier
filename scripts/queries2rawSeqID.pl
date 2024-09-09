@@ -5,7 +5,7 @@ my $file2 = shift;
 my $file3 = shift;
 my $pair_reads = shift;
 my $single_reads = shift;
-my %read; 
+my (@col2,%read); 
 open IN1,"$file1" or die $!;
 while(<IN1>){
 	  if(/>/){
@@ -20,7 +20,12 @@ close IN1;
 
 open IN2,"$file2" or die $!;
 while(<IN2>){
-	my @col=split;
-	print "$read{$col[0]}\t$_";
+	if (/^\s*$/){
+		if($read{$col2[0]}){print "$read{$col2[0]}\t$_";}
 	}
+	else{
+		@col2=split;
+		if($read{$col2[0]}){print "$read{$col2[0]}\t$_";}
+	}
+}
 close IN2;

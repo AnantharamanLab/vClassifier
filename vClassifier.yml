@@ -4,6 +4,7 @@ channels:
   - conda-forge
   - defaults
 dependencies:
+#  - python ==3.6
   - ete3=3.1.1=py36_0
   - fastani=1.33=h0fdf51a_2
   - hmmer=3.4=hdbdd923_0
@@ -53,3 +54,4 @@ dependencies:
   - perl-xml-sax-base=1.09=pl5321hdfd78af_1
   - pplacer=1.1.alpha19=h9ee0642_2
   - trimal=1.4.1=h7d875b9_5
+  - prodigal=2.6.3=h031d066_9

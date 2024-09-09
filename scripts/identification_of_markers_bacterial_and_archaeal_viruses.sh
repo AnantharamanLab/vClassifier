@@ -93,6 +93,12 @@ do
     grep -w "$line" "$taxon"_hmm.out.evalue3.cov50
 done > total_hmm.out.evalue3.cov50
 
+#continue analyzing if total_hmm.out.evalue3.cov50 size > 0
+if [[ ! -s total_hmm.out.evalue3.cov50 ]] ; then
+          exit 1
+
+else
+#  FILE has some data, so we can continue...
 sed 's/_/ /' total_hmm.out.evalue3.cov50|awk 'BEGIN {FS=" "; name=""; highest_score=0} $1 != name {if (name != "") print line[highest_score]; name=$1; highest_score=0} $9 >= highest_score {highest_score=$9; line[highest_score]=$0} END {print line[highest_score]}'|sed 's/ /_/' > total_hmm.out.evalue3.cov50.besthit
 cat total_hmm.out.evalue3.cov50.besthit |awk '{print $1"\t"$4"\t"$1}'|sed 's/>//'|sed 's/_.*VOG/\tVOG/' > total_hmm.out.evalue3.cov50.besthit.simple.format.with.genomeID.markers
 
@@ -122,7 +128,11 @@ cd $reference_dir/"$taxon"_dir
 
 for i in VOG*.protein.fasta
 do
-    cat $i $wd2/temp_for_VOG_protein/$i > $wd2/$i
+    if [ -f $wd2/temp_for_VOG_protein/$i ]; then
+	cat $i $wd2/temp_for_VOG_protein/$i > $wd2/$i
+    else
+	cat $i > $wd2/$i
+    fi
 done
 
 cd $wd2
@@ -130,7 +140,7 @@ cd $wd2
 #align multiple sequences using mafft and trimal
 for i in VOG*.protein.fasta
 do
-    mafft --adjustdirectionaccurately --thread $threads --auto $i > "$i".msa
+    mafft --quiet --adjustdirectionaccurately --thread $threads --auto $i > "$i".msa
 done
 
 for i in *msa
@@ -159,6 +169,8 @@ ls -lh VOG*for.concatenation|awk '{print $9}'|perl -p -e 's/\n/ /g' |sed 's/^/pa
 bash paste.sh
 cat total.tmp| sed 's/\t//g'|sed 's/>/</'|sed 's/>.*//'|sed 's/^</>/' > total.protein.fasta.msa.trimal.with.genomeID.for.concatenation
 cp total.protein.fasta.msa.trimal.with.genomeID.for.concatenation $wd1/"$taxon"_ReferenceQuery_aln.fasta
-rm ../query_viral_genomes_protein.faa.tmp
+#rm ../query_viral_genomes_protein.faa.tmp
 
 cd $wd1
+
+fi
