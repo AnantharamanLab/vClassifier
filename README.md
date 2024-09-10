@@ -8,7 +8,9 @@ Please note that this is an ALPHA version of the program, which means this colle
 # Preinstallation
 ```
 wget https://repo.anaconda.com/miniconda/Miniconda3-py312_24.7.1-0-Linux-x86_64.sh
+
 bash Miniconda3-py312_24.7.1-0-Linux-x86_64.sh
+
 conda activate
 ```
 
