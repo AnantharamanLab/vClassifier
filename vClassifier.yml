@@ -4,7 +4,6 @@ channels:
   - conda-forge
   - defaults
 dependencies:
-#  - python ==3.6
   - ete3=3.1.1=py36_0
   - fastani=1.33=h0fdf51a_2
   - hmmer=3.4=hdbdd923_0
