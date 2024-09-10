@@ -131,7 +131,7 @@ cd tree_replacement_and_taxon_assignment
 
 for aln in *_ReferenceQuery_aln.fasta
 do line=$(echo $aln|sed 's/_ReferenceQuery_aln.fasta//')
-    echo $(date)"	Preprocessing before classification for viruses of "$line""
+    echo $(date)"	Preprocessing before classification for viruses in "$line""
     mkdir "$line"_temp_dir_for_species_assignment
     mkdir "$line"_temp_dir_for_genus_assignment
     mkdir "$line"_temp_dir_for_subfamily_assignment
