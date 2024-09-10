@@ -6,9 +6,11 @@ Leveraging reference trees and nucleotide identity metrics, we developed the vCl
 Please note that this is an ALPHA version of the program, which means this collection of scripts possiblely contains bugs and is still under development.
 
 # Preinstallation
+```
 wget https://repo.anaconda.com/miniconda/Miniconda3-py312_24.7.1-0-Linux-x86_64.sh
 bash Miniconda3-py312_24.7.1-0-Linux-x86_64.sh
 conda activate
+```
 
 # How to install vClassifier
 
