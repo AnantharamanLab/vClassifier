@@ -98,7 +98,7 @@ vClassifier -m "mode" -i "/PATH/TO/Input" -l "/PATH/TO/Taxa" -p "/PATH/TO/Instal
 vClassifier -m family -i "/PATH/TO/vClassifier/example_data/examples_of_viral_genomes_that_include_family_information/query_genomes.fna" -l "/PATH/TO/vClassifier/example_data/examples_of_viral_genomes_that_include_family_information/query_family" -p "/PATH/TO/vClassifier" -t 30
 ```
 
-## **vClassifier_subfamily**
+## **vClassifier for viral subfamilies**
 
 **Example:**
 ```
