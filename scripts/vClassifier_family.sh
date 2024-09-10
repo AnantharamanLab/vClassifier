@@ -63,8 +63,8 @@ done
 
 echo ====================================================================================================
 
-##Step 1: Gene calling and VOG searching
-echo $(date)"	Step 1: Gene calling and VOG searching"
+##Step 1: Gene calling and VOG annotation
+echo $(date)"	Step 1: Gene calling and VOG annotation"
 
 VOG_database="$installer_dir/database/VOG_hmmfiles"
 scripts="$installer_dir/scripts"
