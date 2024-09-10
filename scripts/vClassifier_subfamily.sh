@@ -132,7 +132,7 @@ cd tree_replacement_and_taxon_assignment
 for aln in *_ReferenceQuery_aln.fasta
 do 
     line=$(echo $aln|sed 's/_ReferenceQuery_aln.fasta//')
-    echo $(date)"	Preprocessing before classification for viruses of "$line""
+    echo $(date)"	Preprocessing before classification for viruses in "$line""
     mkdir "$line"_temp_dir_for_species_assignment
     mkdir "$line"_temp_dir_for_genus_assignment
     pplacer --verbosity 0 -c $installer_dir/database/packages_for_pplacer/"$line".refpkg "$line"_ReferenceQuery_aln.fasta -o "$line"_ReferenceQuery.jplace
