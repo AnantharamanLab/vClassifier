@@ -1,5 +1,0 @@
-Query	Species	Genus	Subfamily	Family	Order	Class	Phylum	Kingdom	Realm
-AB449690.1	Tunavirus T1	Tunavirus	Tunavirinae	Drexlerviridae	NA	Caudoviricetes	Uroviricota	Heunggongvirae	Duplodnaviria	
-AF132670.1	Twortvirus twort	Twortvirus	Twortvirinae	Herelleviridae	NA	Caudoviricetes	Uroviricota	Heunggongvirae	Duplodnaviria	
-AF176034.1	Sinsheimervirus phiX174	Sinsheimervirus	Bullavirinae	Microviridae	Petitvirales	Malgrandaviricetes	Phixviricota	Sangervirae	Monodnaviria	
-AB062697.1	Unassigned	Tegunavirus	Tevenvirinae	Straboviridae	NA	Caudoviricetes	Uroviricota	Heunggongvirae	Duplodnaviria	Reference_HE956709
