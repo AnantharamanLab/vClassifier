@@ -75,7 +75,7 @@ vClassifier -m "mode" -i "/PATH/TO/Input" -l "/PATH/TO/Taxa" -p "/PATH/TO/Instal
 
 **-t**     Number of threads to use for parallel running
 
-**-p**     vClassifier intallation path 
+**-p**     Absolute installation path for vClassifier 
 
 **-m**     vClassifier mode. Input 'family' or 'subfamily' only. Mode 'family': inputs are viral genomes that include family information. Mode 'subfamily': inputs are viral genomes that include subfamily information
 
