@@ -169,7 +169,6 @@ ls -lh VOG*for.concatenation|awk '{print $9}'|perl -p -e 's/\n/ /g' |sed 's/^/pa
 bash paste.sh
 cat total.tmp| sed 's/\t//g'|sed 's/>/</'|sed 's/>.*//'|sed 's/^</>/' > total.protein.fasta.msa.trimal.with.genomeID.for.concatenation
 cp total.protein.fasta.msa.trimal.with.genomeID.for.concatenation $wd1/"$taxon"_ReferenceQuery_aln.fasta
-#rm ../query_viral_genomes_protein.faa.tmp
 
 cd $wd1
 
