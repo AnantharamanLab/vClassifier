@@ -57,6 +57,23 @@ conda env create -f /Path/To/vClassifier.yml   #change /PATH/TO to the installat
 conda activate vClassifier
 ```
 
+If you encounter the following errors during installation:
+```
+LibMambaUnsatisfiableError: Encountered problems while solving:
+  - package perl-extutils-makemaker-7.70-pl5321hd8ed1ab_0 is excluded by strict repo priority
+  - package perl-file-path-2.18-pl5321hd8ed1ab_0 is excluded by strict repo priority
+  - package perl-file-temp-0.2304-pl5321hd8ed1ab_0 is excluded by strict repo priority
+  - package perl-file-which-1.24-pl5321hd8ed1ab_0 is excluded by strict repo priority
+```
+​Please enter the following command to set the channel priority to flexible:
+```
+conda config --set channel_priority flexible
+```
+Afterward, you can rerun the command:
+```
+conda env create -f /home/zhoukun/software/vClassifier/vClassifier.yml
+```
+
 # Running vClassifier
 
 Two main programs are implemented in vClassifier: vClassifier for viral families and for viral subfamilies. In summary, the first one is used to assign taxonomy to viral genomes of the 36 reference families that have been listed in the /database/reference_family_list, while the second is used to assign taxonomy to viruses of the 55 reference subfamilies that have been listed in the /database/reference_family_list.
