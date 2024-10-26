@@ -71,7 +71,8 @@ conda config --set channel_priority flexible
 ```
 Afterward, you can rerun the command:
 ```
-conda env create -f /home/zhoukun/software/vClassifier/vClassifier.yml
+conda env create -f /Path/To/vClassifier/vClassifier.yml
+conda activate vClassifier
 ```
 
 # Running vClassifier
