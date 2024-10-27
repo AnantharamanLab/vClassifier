@@ -58,9 +58,9 @@ LibMambaUnsatisfiableError: Encountered problems while solving:
 ```
 conda config --set channel_priority flexible
 ```
-Afterward, you can rerun the command:
+Afterward, rerun the command:
 ```
-conda env create -f /Path/To/vClassifier/vClassifier.yml
+conda env create -f /Path/To/vClassifier.yml  #change /PATH/TO to the installation path of vClassifier
 conda activate vClassifier
 ```
 
