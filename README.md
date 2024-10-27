@@ -9,9 +9,7 @@ Please note that this is an ALPHA version of the program, which means this colle
 **Install a latest version of Miniconda**
 ```
 wget https://repo.anaconda.com/miniconda/Miniconda3-py312_24.7.1-0-Linux-x86_64.sh
-
 bash Miniconda3-py312_24.7.1-0-Linux-x86_64.sh
-
 conda activate
 ```
 
@@ -20,22 +18,14 @@ conda activate
 **1. copy to your profile the content of the vClassifier folder**
 ```
 git clone https://github.com/AnantharamanLab/vClassifier.git
-  
 cd vClassifier/database
-  
 unzip packages_for_pplacer.zip
-  
 unzip VOG_protein_sequences_at_FamilyOrSubfamily_rank.zip
-  
 gzip -d reference_genomes.fasta.gz
-  
 wget https://fileshare.lisc.univie.ac.at/vog/vog216/vog.hmm.tar.gz
-  
 mkdir VOG_hmmfiles
-  
 cd VOG_hmmfiles && tar -zxf ../vog.hmm.tar.gz && cd -
 ```  
-
 
 **2. add a directory to your $PATH**    
 ```
@@ -53,7 +43,6 @@ source ~/.bashrc
 **3. create and activate the vClassifier conda env**
 ```
 conda env create -f /Path/To/vClassifier.yml   #change /PATH/TO to the installation path of vClassifier 
-  
 conda activate vClassifier
 ```
 
