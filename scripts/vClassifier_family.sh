@@ -122,6 +122,15 @@ rm identification_of_markers_bacterial_and_archaeal_viruses_for_*sh
 mkdir genome_alignment
 mv dir_of_*_alignment genome_alignment
 
+for aln in *_ReferenceQuery_aln.fasta
+do
+    if [ -f "$aln" ]; then
+	file="1"
+    fi
+done
+
+##continue following steps if single-copy genes were detected
+if [ "$file" = "1" ]; then
 ##Step 3: Replace genomes in reference trees using pplacer and assign taxonomy based on monophyly; make sure ete3 installed
 echo $(date)"	Step 3: Genome replacement in reference trees"
 
@@ -392,4 +401,13 @@ rm sequences_with_classification* query_classification* query_*_assignment_outpu
 
 ##Assignment finished
 echo $(date)"	Assignment finished"
+echo $(date)"	Thanks for using vClassifier"
 echo ====================================================================================================
+
+##discontinue the above steps ifrm hmmsearch_batch.sh scriptset.sh total_hmm.out.evalue3.cov50 query sequences lack specific single-copy genes
+else
+rm hmmsearch_batch.sh scriptset.sh total_hmm.out.evalue3.cov50
+echo $(date)"	Assignment was discontinued due to the lack of specific single-copy genes in the query sequences"
+echo $(date)"	Thanks for using vClassifier"
+echo ====================================================================================================
+fi
