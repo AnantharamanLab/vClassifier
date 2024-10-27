@@ -404,7 +404,7 @@ echo $(date)"	Assignment finished"
 echo $(date)"	Thanks for using vClassifier"
 echo ====================================================================================================
 
-##discontinue the above steps ifrm hmmsearch_batch.sh scriptset.sh total_hmm.out.evalue3.cov50 query sequences lack specific single-copy genes
+##discontinue steps 3-7 if query sequences lack specific single-copy genes
 else
 rm hmmsearch_batch.sh scriptset.sh total_hmm.out.evalue3.cov50
 echo $(date)"	Assignment was discontinued due to the lack of specific single-copy genes in the query sequences"
