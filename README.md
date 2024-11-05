@@ -86,11 +86,11 @@ Two main programs are implemented in vClassifier: vClassifier for viral families
 
 **Usage:**
 ```
-vClassifier -m "mode" -i "/PATH/TO/Input" -l "/PATH/TO/Taxa" -p "/Full/PATH/TO/Installation" -t "Number of threads"
+vClassifier -m "mode" -i "/PATH/TO/Input" -l "/PATH/TO/Taxa" -p "/Full/PATH/TO/Installation" -o "Output directory" -t "Number of threads"
 ```
 **Option descriptions:**
 
-**-i**       Input nucleotide sequences in FASTA format. Please note that providing the full path is recommended to avoid errors.
+**-i**     Input nucleotide sequences in FASTA format. Please note that providing the full path is recommended to avoid errors.
 
 **-l**     A file containing family or subfamily information for the input nucleotide sequences. The first column should list the query IDs, and the second column should provide the corresponding family or subfamily taxonomy. Please note that providing the full path is recommended to avoid errors.
 
@@ -99,6 +99,8 @@ vClassifier -m "mode" -i "/PATH/TO/Input" -l "/PATH/TO/Taxa" -p "/Full/PATH/TO/I
 **-p**     Full installation path for vClassifier. Please verify that the directories for the database and scripts are present under this path.
 
 **-m**     vClassifier mode. Input 'family' or 'subfamily' only. Mode 'family': inputs are viral genomes that include family information. Mode 'subfamily': inputs are viral genomes that include subfamily information.
+
+**-o**     Output directory.
 
 **-h**     Show help on version and usage.
 
@@ -116,12 +118,12 @@ vClassifier -m "mode" -i "/PATH/TO/Input" -l "/PATH/TO/Taxa" -p "/Full/PATH/TO/I
 
 **Example:**
 ```
-vClassifier -m family -i "/PATH/TO/vClassifier/example_data/examples_of_viral_genomes_that_include_family_information/query_genomes.fna" -l "/PATH/TO/vClassifier/example_data/examples_of_viral_genomes_that_include_family_information/query_family" -p "/Full/PATH/TO/vClassifier" -t 30
+vClassifier -m family -i "/PATH/TO/vClassifier/example_data/examples_of_viral_genomes_that_include_family_information/query_genomes.fna" -l "/PATH/TO/vClassifier/example_data/examples_of_viral_genomes_that_include_family_information/query_family" -p "/Full/PATH/TO/vClassifier" -o Output_dir -t 30
 ```
 
 ## **vClassifier for viral subfamilies**
 
 **Example:**
 ```
-vClassifier -m subfamily -i "/PATH/TO/vClassifier/example_data/examples_of_viral_genomes_that_include_subfamily_information/query_genomes.fna" -l "/PATH/TO/vClassifier/example_data/examples_of_viral_genomes_that_include_subfamily_information/query_subfamily" -p "/Full/PATH/TO/vClassifier" -t 30
+vClassifier -m subfamily -i "/PATH/TO/vClassifier/example_data/examples_of_viral_genomes_that_include_subfamily_information/query_genomes.fna" -l "/PATH/TO/vClassifier/example_data/examples_of_viral_genomes_that_include_subfamily_information/query_subfamily" -p "/Full/PATH/TO/vClassifier" -o Output_dir -t 30
 ```
