@@ -41,6 +41,7 @@ source ~/.bashrc
 
 
 **3. create and activate the vClassifier conda env**
+
 Create env via conda:
 ```
 conda env create -f /Path/To/vClassifier.yml   #change /PATH/TO to the installation path of vClassifier 
