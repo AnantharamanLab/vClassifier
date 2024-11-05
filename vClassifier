@@ -28,13 +28,14 @@ Help()
 {
    echo "vClassifier v1.0 :: classification of viral genomes based on phylogeny and genome identity"
    echo 
-   echo "Usage: vClassifier [-i|-l|-t|-p|-m|-h]"
+   echo "Usage: vClassifier [-i|-l|-t|-p|-m|-o|-h]"
    echo "options:"
-   echo "-i     Input nucleotide sequences in FASTA format."
-   echo "-l     A file containing family or subfamily information for the input nucleotide sequences. The first column should list the query IDs, and the second column should provide the corresponding family or subfamily taxonomy."
+   echo "-i     Input nucleotide sequences in FASTA format. Please note that providing the full path is recommended to avoid errors."
+   echo "-l     A file containing family or subfamily information for the input nucleotide sequences. The first column should list the query IDs, and the second column should provide the corresponding family or subfamily taxonomy. Please note that providing the full path is recommended to avoid errors."
    echo "-t     Number of threads to use for parallel running."
-   echo "-p     vClassifier intallation path."
+   echo "-p     Full installation path for vClassifier. Please verify that the directories for the database and scripts are present under this path."
    echo "-m     vClassifier mode. Input 'family' or 'subfamily' only. Mode 'family': inputs are viral genomes that include family information. Mode 'subfamily': inputs are viral genomes that include subfamily information."
+   echo "-o     Output folder."
    echo "-h     Show help on version and usage."
 }
 
@@ -48,7 +49,7 @@ Help()
 ################################################################################
 # Get the options
 
-while getopts :hl:t:i:p:m: option
+while getopts :hl:t:i:p:m:o: option
 do
     case "${option}" in
         i) query_genome=${OPTARG};;
@@ -56,6 +57,7 @@ do
         t) threads=${OPTARG};;
 	p) installer_dir=${OPTARG};;
 	m) mode=${OPTARG};;
+	o) output_dir=${OPTARG};;
 	h) Help
 	   exit;;
 	\?) echo "Error: Invalid option."
@@ -69,9 +71,9 @@ done
 ################################################################################
 
 if [ $mode = "family" ];then
-bash $installer_dir/scripts/vClassifier_family.sh -i $query_genome -l $query_taxonomy -p $installer_dir -t $threads
+bash $installer_dir/scripts/vClassifier_family.sh -i $query_genome -l $query_taxonomy -p $installer_dir -o $output_dir -t $threads
 fi
 
 if [ $mode = "subfamily" ];then
-bash $installer_dir/scripts/vClassifier_subfamily.sh -i $query_genome -l $query_taxonomy -p $installer_dir -t $threads
+bash $installer_dir/scripts/vClassifier_subfamily.sh -i $query_genome -l $query_taxonomy -p $installer_dir -o $output_dir -t $threads
 fi
