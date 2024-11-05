@@ -41,8 +41,16 @@ source ~/.bashrc
 
 
 **3. create and activate the vClassifier conda env**
+Create env via conda:
 ```
 conda env create -f /Path/To/vClassifier.yml   #change /PATH/TO to the installation path of vClassifier 
+conda activate vClassifier
+```
+
+Altallnatively, create env via mamba to accelerate installation:
+```
+conda install mamba -c conda-forge
+mamba env create -f /Path/To/vClassifier.yml   #change /PATH/TO to the installation path of vClassifier 
 conda activate vClassifier
 ```
 
@@ -61,6 +69,11 @@ conda config --set channel_priority flexible
 Afterward, rerun the command:
 ```
 conda env create -f /Path/To/vClassifier.yml  #change /PATH/TO to the installation path of vClassifier
+conda activate vClassifier
+```
+Or
+```
+mamba env create -f /Path/To/vClassifier.yml   #change /PATH/TO to the installation path of vClassifier 
 conda activate vClassifier
 ```
 
