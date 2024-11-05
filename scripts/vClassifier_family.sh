@@ -28,12 +28,13 @@ Help()
 {
    echo "vClassifier v1.0 :: classification of viral genomes based on phylogeny and genome identity"
    echo 
-   echo "Usage: vClassifier_family [-i|-l|-t|-p|-h]"
+   echo "Usage: vClassifier_family [-i|-l|-t|-p|-o|-h]"
    echo "options:"
-   echo "-i     Input nucleotide sequences in FASTA format."
-   echo "-l     A file containing family or subfamily information for the input nucleotide sequences. The first column should listthe query IDs, and the second column should provide the corresponding family taxonomy."
+   echo "-i     Input nucleotide sequences in FASTA format. Please note that providing the full path is recommended to avoid errors."
+   echo "-l     A file containing family or subfamily information for the input nucleotide sequences. The first column should listthe query IDs, and the second column should provide the corresponding family taxonomy. Please note that providing the full path is recommended to avoid errors."
    echo "-t     Number of threads to use for parallel running."
-   echo "-p     vClassifier intallation path."
+   echo "-p     Full installation path for vClassifier. Please verify that the directories for the database and scripts are present under this path."
+   echo "-o     Output folder."
    echo "-h     Show help on version and usage."
 }
 
@@ -47,13 +48,14 @@ Help()
 ################################################################################
 # Get the options
 
-while getopts :hl:t:i:p: option
+while getopts :hl:t:i:p:o: option
 do
     case "${option}" in
         i) query_genome=${OPTARG};;
         l) query_taxonomy=${OPTARG};;
         t) threads=${OPTARG};;
 	p) installer_dir=${OPTARG};;
+ 	o) output_dir=${OPTARG};;
 	h) Help
 	   exit;;
 	\?) echo "Error: Invalid option."
@@ -62,6 +64,9 @@ do
 done
 
 echo ====================================================================================================
+
+mkdir $output_dir
+cd $output_dir
 
 ##Step 1: Gene calling and VOG annotation
 echo $(date)"	Step 1: Gene calling and VOG annotation"
