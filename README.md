@@ -48,7 +48,7 @@ conda env create -f /Path/To/vClassifier.yml   #change /PATH/TO to the installat
 conda activate vClassifier
 ```
 
-Altallnatively, create env via mamba to accelerate installation:
+Alternatively, create env via mamba to accelerate installation:
 ```
 conda install mamba -c conda-forge
 mamba env create -f /Path/To/vClassifier.yml   #change /PATH/TO to the installation path of vClassifier 
