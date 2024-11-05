@@ -116,12 +116,12 @@ vClassifier -m "mode" -i "/PATH/TO/Input" -l "/PATH/TO/Taxa" -p "/Full/PATH/TO/I
 
 **Example:**
 ```
-vClassifier -m family -i "/PATH/TO/vClassifier/example_data/examples_of_viral_genomes_that_include_family_information/query_genomes.fna" -l "/PATH/TO/vClassifier/example_data/examples_of_viral_genomes_that_include_family_information/query_family" -p "/PATH/TO/vClassifier" -t 30
+vClassifier -m family -i "/PATH/TO/vClassifier/example_data/examples_of_viral_genomes_that_include_family_information/query_genomes.fna" -l "/PATH/TO/vClassifier/example_data/examples_of_viral_genomes_that_include_family_information/query_family" -p "/Full/PATH/TO/vClassifier" -t 30
 ```
 
 ## **vClassifier for viral subfamilies**
 
 **Example:**
 ```
-vClassifier -m subfamily -i "/PATH/TO/vClassifier/example_data/examples_of_viral_genomes_that_include_subfamily_information/query_genomes.fna" -l "/PATH/TO/vClassifier/example_data/examples_of_viral_genomes_that_include_subfamily_information/query_subfamily" -p "/PATH/TO/vClassifier" -t 30
+vClassifier -m subfamily -i "/PATH/TO/vClassifier/example_data/examples_of_viral_genomes_that_include_subfamily_information/query_genomes.fna" -l "/PATH/TO/vClassifier/example_data/examples_of_viral_genomes_that_include_subfamily_information/query_subfamily" -p "/Full/PATH/TO/vClassifier" -t 30
 ```
