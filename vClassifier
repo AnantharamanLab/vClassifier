@@ -70,10 +70,12 @@ done
 #or subfamilies                                                                #
 ################################################################################
 
+installer_dir_modified=$(echo $installer_dir|sed 's/\/*$//')
+
 if [ $mode = "family" ];then
-bash $installer_dir/scripts/vClassifier_family.sh -i $query_genome -l $query_taxonomy -p $installer_dir -o $output_dir -t $threads
+bash $installer_dir/scripts/vClassifier_family.sh -i $query_genome -l $query_taxonomy -p $installer_dir_modified -o $output_dir -t $threads
 fi
 
 if [ $mode = "subfamily" ];then
-bash $installer_dir/scripts/vClassifier_subfamily.sh -i $query_genome -l $query_taxonomy -p $installer_dir -o $output_dir -t $threads
+bash $installer_dir/scripts/vClassifier_subfamily.sh -i $query_genome -l $query_taxonomy -p $installer_dir_modified -o $output_dir -t $threads
 fi
