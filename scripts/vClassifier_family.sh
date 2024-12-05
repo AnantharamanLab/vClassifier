@@ -217,7 +217,7 @@ rm sequences_with_classification* query_classification* query_*_assignment_outpu
 
 ##Assignment finished
 echo $(date)"	Assignment finished"
-echo $(date)"	Thanks for using vClassifier" #added
+echo $(date)"	Thanks for using vClassifier"
 echo ====================================================================================================
 
 ##Assignment unfinished due to the absence of single-copy genes in query sequences
