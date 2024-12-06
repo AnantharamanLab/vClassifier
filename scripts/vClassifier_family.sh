@@ -204,7 +204,7 @@ paste query_species_assignment_output2_for_paste2 query_genus_assignment_output_
             q=$(echo $line|sed 's/ /\t/g'|sed 's/query.*\@\@NA.*\t//')
             echo "$line"
             grep -w "$q" $installer_dir/database/VMR_MSL38_v1_for_Grouping_Key_with_reference_marks.txt
-        done|awk 'BEGIN{RS="query"}NR>1{sub("\n","\t"); gsub("\n",""); print RS$0}'|grep 'Reference_' |cut -f1-3,8-13|sed 's/\@\@/\t/'|sed 's/NA/Uassigned/' > query_classification_without_species_information2
+        done|awk 'BEGIN{RS="query"}NR>1{sub("\n","\t"); gsub("\n",""); print RS$0}'|grep 'Reference_' |cut -f1-3,8-13|sed 's/\@\@/\t/'|sed 's/NA/Unassigned/' > query_classification_without_species_information2
 
 ##Step 7: Final lineage assignment
 echo $(date)"	Step 7: Final lineage assignment"
