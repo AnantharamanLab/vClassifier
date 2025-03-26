@@ -137,11 +137,12 @@ Any query genome that vClassifier was able to classify below the family level (f
 Ranks without an assignment will be listed as "Unassigned", such as in this example using virus sequences identified from a soil metagenome using geNomad:
 
 ```
-Query                   Species         Genus           Subfamily       Family          Order   Class           Phylum          Kingdom         Realm
-BAr1A1B1C_000000194000  Unassigned      NA              Tevenvirinae    Straboviridae   NA      Caudoviricetes  Uroviricota     Heunggongvirae  Duplodnaviria
-BAr1A1B1C_000000025753  Unassigned      Ishigurovirus   Emmerichvirinae Straboviridae   NA      Caudoviricetes  Uroviricota     Heunggongvirae  Duplodnaviria
-BAr1A1B1C_000000314370  Unassigned      Sauletekiovirus NA              Drexlerviridae  NA      Caudoviricetes  Uroviricota     Heunggongvirae  Duplodnaviria
-BAr1A1B1C_000000343757  Unassigned      Lazarusvirus    Twarogvirinae   Straboviridae   NA      Caudoviricetes  Uroviricota     Heunggongvirae  Duplodnaviria
+Query                   Species         Genus           Subfamily       Family          Order           Class            Phylum            Kingdom         Realm
+BAr1A1B1C_000000194000  Unassigned      NA              Tevenvirinae    Straboviridae   NA              Caudoviricetes   Uroviricota       Heunggongvirae  Duplodnaviria
+BAr1A1B1C_000000025753  Unassigned      Ishigurovirus   Emmerichvirinae Straboviridae   NA              Caudoviricetes   Uroviricota       Heunggongvirae  Duplodnaviria
+BAr1A1B1C_000000314370  Unassigned      Sauletekiovirus NA              Drexlerviridae  NA              Caudoviricetes   Uroviricota       Heunggongvirae  Duplodnaviria
+BAr1A1B1C_000000343757  Unassigned      Lazarusvirus    Twarogvirinae   Straboviridae   NA              Caudoviricetes   Uroviricota       Heunggongvirae  Duplodnaviria
+BAr1A1B1C_000000399930  Unassigned      Gammatectivirus NA              Tectiviridae    Kalamavirales   Tectiliviricetes Preplasmiviricota Bamfordvirae    Varidnaviria
 ```
 
 Fields with "NA" means that there are currently no ICTV-recognized taxa for that rank in the listed virus lineage (this is common at the Order-level).
