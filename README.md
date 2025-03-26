@@ -5,6 +5,7 @@ Leveraging reference trees and nucleotide identity metrics, we developed the vCl
 
 Please note that this is an ALPHA version of the program, which means this collection of scripts possiblely contains bugs and is still under development.
 
+
 # Preinstallation
 **Install a latest version of Miniconda**
 ```
@@ -12,6 +13,7 @@ wget https://repo.anaconda.com/miniconda/Miniconda3-py312_24.7.1-0-Linux-x86_64.
 bash Miniconda3-py312_24.7.1-0-Linux-x86_64.sh
 conda activate
 ```
+
 
 # How to install vClassifier
 
@@ -78,17 +80,18 @@ mamba env create -f /Path/To/vClassifier.yml   #change /PATH/TO to the installat
 conda activate vClassifier
 ```
 
+
 # Running vClassifier
 
-Two main programs are implemented in vClassifier: vClassifier for viral families and for viral subfamilies. In summary, the first one is used to assign taxonomy to viral genomes of the 36 reference families that have been listed in the /database/reference_family_list, while the second is used to assign taxonomy to viruses of the 55 reference subfamilies that have been listed in the /database/reference_family_list.
+Two main programs are implemented in vClassifier: vClassifier for viral families and for viral subfamilies. In summary, the first one is used to assign taxonomy to viral genomes of the 36 reference families that have been listed in the `/database/reference_family_list`, while the second is used to assign taxonomy to viruses of the 55 reference subfamilies that have been listed in the `/database/reference_family_list`.
 
 ## **Quick Start**
 
-**Usage:**
+### **Usage:**
 ```
 vClassifier -m "mode" -i "/PATH/TO/Input" -l "/PATH/TO/Taxa" -p "/Full/PATH/TO/Installation" -o "Output directory" -t "Number of threads"
 ```
-**Option descriptions:**
+### **Option descriptions:**
 
 **-i**     Input nucleotide sequences in FASTA format. Please note that providing the full path is recommended to avoid errors.
 
@@ -105,25 +108,107 @@ vClassifier -m "mode" -i "/PATH/TO/Input" -l "/PATH/TO/Taxa" -p "/Full/PATH/TO/I
 **-h**     Show help on version and usage.
 
 
-**Output descriptions:**
+### **Output descriptions:**
 
-- The final output file, **"sequences_with_classification.txt"**, contains the taxonomic assignments for the query genomes. 
-- The intermediate output directory, **gene_calling**,  contains files generated during gene prediction.
-- The intermediate output directory, **genome_alignment**, contains files produced during the alignment of single-copy genes of queries with those of references.
-- The intermediate output directory, **tree_replacement_and_taxon_assignment**, holds outputs generated during reference tree replacement and taxon assignment.
+The vClassifier output folder will have this structure:
+
+```
+vClassifier_output
+├── final_taxonomic_assignment.txt
+├── gene_calling
+├── genome_alignment
+└── tree_replacement_and_taxon_assignment
+```
+
+**`final_taxonomic_assignment.txt`:**
+
+Contains the taxonomic assignments for the query genomes, it should look like this (using the vClassifier family example data):
+
+```
+Query           Species                 Genus           Subfamily               Family          Order           Class             Phylum             Kingdom         Realm
+AJ604531.1      Tequintavirus NBSal003  Tequintavirus   Markadamsvirinae        Demerecviridae  NA              Caudoviricetes    Uroviricota        Heunggongvirae  Duplodnaviria
+AB218927.1      Emesvirus japonicum     Emesvirus       NA                      Fiersviridae    Norzivirales    Leviviricetes     Lenarviricota      Orthornavirae   Riboviria
+CP013282.1      Betatectivirus Bam35    Betatectivirus  NA                      Tectiviridae    Kalamavirales   Tectiliviricetes  Preplasmiviricota  Bamfordvirae    Varidnaviria
+AY846870.1      Gruunavirus GTE5        Gruunavirus     Emilbogenvirinae        Zierdtviridae   NA              Caudoviricetes    Uroviricota        Heunggongvirae  Duplodnaviria
+```
+
+Any query genome that vClassifier was able to classify below the family level (for family mode) or the subfamily level (for subfamily mode) will be listed here.
+
+Ranks without an assignment will be listed as "Unassigned", such as in this example using virus sequences identified from a soil metagenome using geNomad:
+
+```
+Query                   Species         Genus           Subfamily       Family          Order   Class           Phylum          Kingdom         Realm
+BAr1A1B1C_000000194000  Unassigned      NA              Tevenvirinae    Straboviridae   NA      Caudoviricetes  Uroviricota     Heunggongvirae  Duplodnaviria
+BAr1A1B1C_000000025753  Unassigned      Ishigurovirus   Emmerichvirinae Straboviridae   NA      Caudoviricetes  Uroviricota     Heunggongvirae  Duplodnaviria
+BAr1A1B1C_000000314370  Unassigned      Sauletekiovirus NA              Drexlerviridae  NA      Caudoviricetes  Uroviricota     Heunggongvirae  Duplodnaviria
+BAr1A1B1C_000000343757  Unassigned      Lazarusvirus    Twarogvirinae   Straboviridae   NA      Caudoviricetes  Uroviricota     Heunggongvirae  Duplodnaviria
+```
+
+Fields with "NA" means that there are currently no ICTV-recognized taxa for that rank in the listed virus lineage (this is common at the Order-level).
+
+
+**`gene_calling`:**
+
+An intermediate output directory containing files generated during gene prediction
+
+
+**`genome_alignment`:**
+
+An intermediate output directory containing files produced during the alignment of single-copy genes of queries with those of references
+
+
+**`tree_replacement_and_taxon_assignment`:**
+
+An intermediate output directory containing file generated during reference tree replacement and taxon assignment.
 
 
 ## **Testing vClassifier**
-## **vClassifier for viral families**
+### **vClassifier for viral families**
 
 **Example:**
 ```
 vClassifier -m family -i "/PATH/TO/vClassifier/example_data/examples_of_viral_genomes_that_include_family_information/query_genomes.fna" -l "/PATH/TO/vClassifier/example_data/examples_of_viral_genomes_that_include_family_information/query_family" -p "/Full/PATH/TO/vClassifier" -o Output_dir -t 30
 ```
 
-## **vClassifier for viral subfamilies**
+### **vClassifier for viral subfamilies**
 
 **Example:**
 ```
 vClassifier -m subfamily -i "/PATH/TO/vClassifier/example_data/examples_of_viral_genomes_that_include_subfamily_information/query_genomes.fna" -l "/PATH/TO/vClassifier/example_data/examples_of_viral_genomes_that_include_subfamily_information/query_subfamily" -p "/Full/PATH/TO/vClassifier" -o Output_dir -t 30
 ```
+
+
+# Troubleshooting tips
+## Setting up the conda environment is taking too long
+If you run the `conda env create -f /Path/To/vClassifier.yml` command and you find that it has been stuck on the `Solving environment` stage for >30 minutes, you can speed up installation using [mamba](https://github.com/mamba-org/mamba). To do this, follow the steps below:
+1. Activate your base conda environment (if it isn't already activated) by running `conda activate`
+2. Install mamba following the instructions in [the mamba documentation](https://mamba.readthedocs.io/en/latest/installation/mamba-installation.html), or by running `conda install conda-forge::mamba` (the latter is not recommended by the mamba documentation but it should work in most cases)
+3. Set up the vClassifier environment using mamba with `mamba env create -f /Path/To/vClassifier.yml` (again, ensuring that you change `/Path/To/vClassifier.yml` to your actual location of the `vClassifier.yml` file)
+
+## How can I obtain the family/subfamily information file required by the `-l` argument?
+In theory, if you know the [ICTV taxonomy](https://ictv.global/taxonomy) at the family or subfamily level for all of your input viral sequences, you can create this two-column (tab separated) file yourself by listing the viral sequence names present in your query fasta file in the first column, the corresponding family or subfamily taxonomy in the second column.
+
+But in practice, you may not have this information already. **We reccomend obtaining family and subfamily taxonomic assignments from [geNomad](https://github.com/apcamargo/genomad)**. Note that geNomad versions 1.11.0 and higher can provide classifications to the family as well as subfamily level with either the `--full-ictv-lineage` or `--lenient-taxonomy` options.
+
+If you use geNomad to identify the viruses in your query fasta file, this information should be present in the **taxonomy** column of either files ending in `_taxonomy.tsv` or `_virus_summary.tsv` (present in the `genomad annotate` and `genomad summary` output folders). For convienence, **we have provided an auxiliary script `extract_genomad_taxonomy.py` that will automatically make the required taxonomy file** by searching for the suffixes *-idae* and *-inae*, which should be at the end of all ICTV family and subfamily names, respectively. If you can provide the path to either the geNomad `taxonomy.tsv` or `virus_summary.tsv` files and your query FASTA file:
+
+For extracting family-level information:
+```
+python3 /PATH/TO/vClassifier/scripts/extract_genomad_taxonomy.py family <path to query FASTA> <path to genomad summary/taxonomy table> <output filename>
+```
+
+For extracting sumfaily-level information:
+```
+python3 /PATH/TO/vClassifier/scripts/extract_genomad_taxonomy.py subfamily <path to query FASTA> <path to genomad summary/taxonomy table> <output filename>
+```
+
+There are other tools that you may use to obtain family- or subfamily- level taxonomic assignments for your query virus sequences, but the `extract_genomad_taxonomy.py` script is only compatible with tab-separated tables that contain the sequences names in a column named `seq_name` and taxnomic assignments in a column named `taxnomy` or `lineage`, with rank names separated by `;` (i.e. the geNomad summary or taxonomy files).
+
+If the output file is empty, see the next section below.
+
+## What if I cannot obtain family- or subfamily-level taxonomic assignments before running vClassifier?
+If you are unable to obtain this information using geNomad, other tools, or using taxonomy of references sequences, please consider the following:
+- If the output file from `extract_genomad_taxonomy.py` is empty, then that means there were no available family/subfamily taxonomic assignments from the geNomad taxonomy table for any of the query sequences. If this happens, then vClassifier will not be able to classify your sequences. You might try an alternative tool or method to provide family/subfamily assignments, but you will need to create the family/subfamily information file yourself.
+- You should inspect the geNomad taxonomy file or whatever source you used to obtain the query viruses. It is not uncommon for there to be no assignment below the class level (e.g. Caudoviricetes) for complex and understudied environments, or for previously undescribed virus lineages. In this case, you could try using more lenient family assignment methods, but the downstream results should be interpreted with caution.
+  - If this still doesn't work and you are confident that your query sequences are truly viral yet highly novel (i.e. possibly representative of an undescribed virus class or higher) then vClassifier or similar tools are not likely the best option to classify the sequences.
+- Your query sequences may be of overall poor quality (i.e. too short to obtain any taxonomic information or likely not a viral sequence at all). If you used a virus identification tool like geNomad or others to identify viral sequences from genomes and metagenomes, check their corresponding scores or confidence assignments.
