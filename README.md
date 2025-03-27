@@ -187,11 +187,11 @@ If you run the `conda env create -f /Path/To/vClassifier.yml` command and you fi
 3. Set up the vClassifier environment using mamba with `mamba env create -f /Path/To/vClassifier.yml` (again, ensuring that you change `/Path/To/vClassifier.yml` to your actual location of the `vClassifier.yml` file)
 
 ## How can I obtain the family/subfamily information file required by the `-l` argument?
-In theory, if you know the [ICTV taxonomy](https://ictv.global/taxonomy) at the family or subfamily level for all of your input viral sequences, you can create this two-column (tab separated) file yourself by listing the viral sequence names present in your query fasta file in the first column, the corresponding family or subfamily taxonomy in the second column.
+In theory, if you know the [ICTV taxonomy](https://ictv.global/taxonomy) at the family or subfamily level for all of your input viral sequences, you can create this two-column (tab separated) file yourself by listing the viral sequence names present in your query FASTA file in the first column, the corresponding family or subfamily taxonomy in the second column.
 
 But in practice, you may not have this information already. **We recommend obtaining family and subfamily taxonomic assignments from [geNomad](https://github.com/apcamargo/genomad)**. Note that geNomad versions 1.11.0 and higher can provide classifications to the family as well as subfamily level with either the `--full-ictv-lineage` or `--lenient-taxonomy` options.
 
-If you use geNomad to identify the viruses in your query fasta file, this information should be present in the **taxonomy** column of either files ending in `_taxonomy.tsv` or `_virus_summary.tsv` (present in the `genomad annotate` and `genomad summary` output folders). For convienence, **we have provided an auxiliary script `extract_genomad_taxonomy.py` that will automatically make the required taxonomy file** by searching for the suffixes *-idae* and *-inae*, which should be at the end of all ICTV family and subfamily names, respectively. If you can provide the path to either the geNomad `taxonomy.tsv` or `virus_summary.tsv` files and your query FASTA file:
+If you use geNomad to identify the viruses in your query fasta file, this information should be present in the **taxonomy** column of either files ending in `_taxonomy.tsv` or `_virus_summary.tsv` (present in the `genomad annotate` and `genomad summary` output folders). For convienence, **we have provided an auxiliary script `extract_genomad_taxonomy.py` that will automatically make the required taxonomy file** by searching for the suffixes *-idae* and *-inae*, which should be at the end of all ICTV family and subfamily names, respectively. You will need to provide the path to either the geNomad `taxonomy.tsv` or `virus_summary.tsv` files and your query FASTA file.
 
 For extracting family-level information:
 ```
@@ -203,7 +203,7 @@ For extracting sumfaily-level information:
 python3 /PATH/TO/vClassifier/scripts/extract_genomad_taxonomy.py subfamily <path to query FASTA> <path to genomad summary/taxonomy table> <output filename>
 ```
 
-There are other tools that you may use to obtain family- or subfamily- level taxonomic assignments for your query virus sequences, but the `extract_genomad_taxonomy.py` script is only compatible with tab-separated tables that contain the sequences names in a column named `seq_name` and taxnomic assignments in a column named `taxnomy` or `lineage`, with rank names separated by `;` (i.e. the geNomad summary or taxonomy files).
+There are other tools that you may use to obtain family- or subfamily-level taxonomic assignments for your query virus sequences, but the `extract_genomad_taxonomy.py` script is only compatible with tab-separated tables that contain the sequences names in a column named `seq_name` and taxnomic assignments in a column named `taxnomy` or `lineage`, with rank names separated by `;` (i.e. the geNomad summary or taxonomy files).
 
 If the output file is empty, see the next section below.
 
