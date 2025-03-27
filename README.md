@@ -203,7 +203,7 @@ For extracting sumfaily-level information:
 python3 /PATH/TO/vClassifier/scripts/extract_genomad_taxonomy.py subfamily <path to query FASTA> <path to genomad summary/taxonomy table> <output filename>
 ```
 
-There are other tools that you may use to obtain family- or subfamily-level taxonomic assignments for your query virus sequences, but the `extract_genomad_taxonomy.py` script is only compatible with tab-separated tables that contain the sequences names in a column named `seq_name` and taxnomic assignments in a column named `taxnomy` or `lineage`, with rank names separated by `;` (i.e. the geNomad summary or taxonomy files).
+There are other tools that you may use to obtain family- or subfamily-level taxonomic assignments for your query virus sequences, but the `extract_genomad_taxonomy.py` script is only compatible with tab-separated tables that contain sequence names in a column named `seq_name` and taxnomic assignments in a column named `taxnomy` or `lineage`, with rank names separated by `;` (i.e. the geNomad summary or taxonomy files).
 
 If the output file is empty, see the next section below.
 
